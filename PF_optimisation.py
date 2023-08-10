@@ -44,14 +44,14 @@ if need_help=="HELP" or need_help=="?":
 
 # error handling
 number_of_stock = input("How many stock do you want to include in your Portfolio? Write a number between 2 and 10\n: ")
-while type(number_of_stock)!=int or number_of_stock<2 or number_of_stock>10:
-    number_of_stock = input("Please write a valide number between 2 and 10\n: ")
-    try:
-        number_of_stock=int(number_of_stock)
-    except:
-        pass
+try:
+    number_of_stock = int(number_of_stock)
+    while number_of_stock < 2 or number_of_stock > 10:
+        number_of_stock = int(input("Please write a valid number between 2 and 10\n: "))
+except ValueError:
+    number_of_stock = 0
 
-number_of_stock=int(number_of_stock)
+number_of_stock = int(number_of_stock)
 
 
 # adding all the stocks in a list
